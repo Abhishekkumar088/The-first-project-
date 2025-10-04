@@ -58,12 +58,20 @@
 </style>
 
 <div id="filters">
-  <div class="filter">
+  <div class="filter <%= !selectedCategory ? 'active' : '' %>">
+    <div>
+      <a href="/listings"><i class="fa-solid fa-border-all"></i></a>
+    </div>
+  </div>
+
+  <!-- Trending -->
+  <div class="filter <%= selectedCategory === 'Trending' ? 'active' : '' %>">
     <div>
       <a href="/listings?category=Trending"><i class="fa-solid fa-fire"></i></a>
     </div>
     <p>Trending</p>
   </div>
+
   <div class="filter">
     <div><i class="fa-solid fa-bed"></i></div>
     <p>Rooms</p>
