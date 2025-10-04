@@ -5,8 +5,17 @@ const mapToken = process.env.MAP_TOKEN;
 
 //  saving routes to make code more readable & it is core functionality of backend
 module.exports.index = async (req, res) => {
-  const allListings = await Listing.find({});
-  res.render("listings/index.ejs", { allListings });
+  const { category } = req.query;
+  let filter = {};
+  if (category) {
+    filter.category = category;
+  }
+
+  const allListings = await Listing.find(filter);
+  res.render("listings/index.ejs", {
+    allListings,
+    selectedCategory: category || null,
+  });
 };
 
 module.exports.renderNewform = (req, res) => {
