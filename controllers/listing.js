@@ -3,7 +3,7 @@ const Listing = require("../models/listing.js");
 const maptilerClient = require("@maptiler/client");
 const mapToken = process.env.MAP_TOKEN;
 
-//  saving routes to make code more readable
+//  saving routes to make code more readable & it is core functionality of backend
 module.exports.index = async (req, res) => {
   const allListings = await Listing.find({});
   res.render("listings/index.ejs", { allListings });
