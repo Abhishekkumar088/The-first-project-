@@ -5,6 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    overflow-x: auto;
   }
 
   .filter {
@@ -12,6 +13,12 @@
     margin-right: 2rem;
     margin-top: 2rem;
     opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .filter.active {
+    opacity: 1;
+    border-bottom: 2px solid #ff385c; /* Airbnb style underline */
   }
   .filter:hover {
     opacity: 1;
